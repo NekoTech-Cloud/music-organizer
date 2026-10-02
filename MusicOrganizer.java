@@ -121,11 +121,8 @@ public class MusicOrganizer
                 //Hit!
                 System.out.println(files.get(position));
                 found = true;
-                position ++;
             }
-            else {
-                position ++;
-            }
+            position ++;
         }
         if (found == false) 
             {
