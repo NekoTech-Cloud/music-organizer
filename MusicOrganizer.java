@@ -59,4 +59,27 @@ public class MusicOrganizer
             files.remove(index);
         }
     }
+    
+    //Step 1 (improper check with empty collection)
+    public boolean checkIndex(int index) 
+    {
+        if (index >= 0 && index <= files.size()-1){
+            return true;
+        }
+        else {
+            System.out.println("Please input an index between 0 and " + (files.size()-1));
+            return false;
+        }
+    }
+    
+    //Step 2, alternative version of checkIndex
+    public boolean validIndex(int index)
+    {
+        if (index >= 0 && index <= files.size()-1){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
