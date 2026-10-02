@@ -82,4 +82,31 @@ public class MusicOrganizer
             return false;
         }
     }
+    
+    //Step 6, method that lists all names in the files array
+    public void listAllFiles()
+    {
+        for(String filename : files) 
+        {        
+            System.out.println(filename);
+        }
+    }
+    
+    //Step 7, list file names with associated index
+    public void listWithIndex()
+    {
+        int position = 0;
+        //same concept as while but with while loop
+        
+        /*for (String filename : files){
+            System.out.println(position + ": " + filename);
+            position ++;
+        } */
+
+        while (position < files.size())
+        {
+         System.out.println(position + ":" + files.get(position));
+         position ++;
+        }
+    }
 }
