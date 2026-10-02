@@ -109,4 +109,27 @@ public class MusicOrganizer
          position ++;
         }
     }
+    
+    //Steo 8 & 9, search function for the lists array
+    public void listMatching(String searchString)
+    {
+        boolean found = false;
+        int position = 0;
+        while (position < files.size())
+        {
+            if (files.get(position) == searchString) {
+                //Hit!
+                System.out.println(files.get(position));
+                found = true;
+                position ++;
+            }
+            else {
+                position ++;
+            }
+        }
+        if (found == false) 
+            {
+                System.out.println("No match found!");
+            }
+    }
 }
