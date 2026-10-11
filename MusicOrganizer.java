@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A class to hold details of audio files.
@@ -10,6 +11,7 @@ public class MusicOrganizer
 {
     // An ArrayList for storing the file names of music files.
     private ArrayList<String> files;
+    Random random;
         
     /**
      * Create a MusicOrganizer
@@ -17,6 +19,7 @@ public class MusicOrganizer
     public MusicOrganizer()
     {
         files = new ArrayList<>();
+        random = new Random();
     }
     
     /**
@@ -67,7 +70,8 @@ public class MusicOrganizer
             return true;
         }
         else {
-            System.out.println("Please input an index between 0 and " + (files.size()-1));
+            System.out.println("Please input an index between 0 and " 
+            + (files.size()-1));
             return false;
         }
     }
@@ -124,9 +128,24 @@ public class MusicOrganizer
             }
             position ++;
         }
-        if (found == false) 
-            {
+        if (found == false) {
                 System.out.println("No match found!");
             }
+    }
+  
+    //Challenge exercise 1
+    public void playRandom(){
+        String file = files.get(random.nextInt(files.size()));
+        System.out.println("Playing: " + file);
+    }
+    
+    //Challenge exercise 2
+    public void shuffle(){
+        ArrayList<String> shuffleList = new ArrayList<>(files);
+        while (shuffleList.size() > 0) {
+            int track = random.nextInt(shuffleList.size());
+            System.out.println("Playing: " + (shuffleList.get(track)));
+            shuffleList.remove(track);
+        }
     }
 }
